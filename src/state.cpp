@@ -27,6 +27,9 @@ namespace
 /// @param state The current state of the door
 void fetchTimes(DoorStates doorState);
 
+/// @brief Toggle the door state
+void toggleDoorState();
+
 //------------------------------------------------------------------------------
 
 namespace State
@@ -85,15 +88,15 @@ namespace State
             if(timestamp > predictedTimestamp + timeTolerance)
             {
                 //! Send notification that the door has not transitioned
-                doorState = (doorState == door_open) ? door_closed : door_open;  // Toggle door state
+                toggleDoorState();  // Toggle door state
             }
         }
 
         // Check if the door has transitioned
-        if((doorState == door_open && Hardware::reedDoor.getEdgePos()) ||
-        (doorState == door_closed && Hardware::reedDoor.getEdgeNeg()))
+        if( (doorState == door_open && Hardware::reedDoor.getEdgePos())
+            || (doorState == door_closed && Hardware::reedDoor.getEdgeNeg()) )
         {
-            doorState = (doorState == door_open) ? door_closed : door_open;  // Toggle door state
+            toggleDoorState();  // Toggle door state
             fetchTimes(doorState);  // Fetch the current time and predicted time based on the new door state
         }
     }
@@ -117,4 +120,9 @@ void fetchTimes(DoorStates doorState)
     predictedTimestamp = sunTimestamp + meanDeviation;
 
     return;
+}
+
+void toggleDoorState()
+{
+    doorState = (doorState == door_open) ? door_closed : door_open; // Toggle door state
 }
