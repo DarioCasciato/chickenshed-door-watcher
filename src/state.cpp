@@ -6,6 +6,7 @@
 #include "hardware.h"
 #include "configurations.h"
 #include "Timer.h"
+#include "APIHandlers/apiHandler.h"
 
 //------------------------------------------------------------------------------
 
