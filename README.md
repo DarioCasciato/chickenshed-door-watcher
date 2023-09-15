@@ -1,115 +1,35 @@
-# Arduino Firmware Template Repository
+# Chickenshed-Door-Watcher
 
-This is a template repository for developing firmware using Object-Oriented Programming (OOP) principles with Arduino and PlatformIO. It provides a structured starting point for creating Arduino projects that follow best practices for modularity, maintainability, and scalability.
+## Description
 
-## Features
+An ESP8266-based monitoring tool designed to keep an eye on the state of a chickenshed door operated by a light sensor. The project periodically fetches the current time and sunrise or sunset times to determine if the door should be open or closed. If the door is not in the expected state, a notification is sent out via IFTTT webhooks.
 
-- Object-Oriented Programming approach for organizing code into reusable and modular classes.
-- PlatformIO integration for easy project management, dependency management, and build system configuration.
-- Basic directory structure to organize your code effectively.
+## Installation
 
-## Prerequisites
+1. Clone this repository.
+2. Install the required libraries.
+3. Flash the firmware onto your ESP8266.
 
-To use this template repository, you need to have the following installed:
+## How it Works
 
-- [Arduino IDE](https://www.arduino.cc/en/software)
-- [PlatformIO Core](https://platformio.org/platformio-ide)
-- [PlatformIO CLI](https://docs.platformio.org/en/latest/core/installation.html)
-- [Git](https://git-scm.com/)
+The system periodically checks the state of the door by reading the reed switch. It then fetches the current time and either the sunrise or sunset time, depending on the door's state.
 
-## Getting Started
+### Door Open
 
-To create a new firmware project using this template repository, follow these steps:
+When the door is open, the system fetches the current time and the sunset time. It then calculates the expected closing time. If the current time is past the calculated closing time, a notification is sent out to alert that the door has not been closed.
 
-1. Click on the "Use this template" button at the top of the repository page to create a new repository based on this template.
-2. Clone the newly created repository to your local machine using Git.
-   ```
-   git clone https://github.com/your-username/your-project.git
-   ```
-3. Change into the project directory.
-   ```
-   cd your-project
-   ```
-4. Open the project in your preferred integrated development environment (i personally use VS-Code).
-5. Build and upload the firmware to your Arduino board using PlatformIO.
+### Door Closed
 
-## Directory Structure
+Similarly, when the door is closed, the system fetches the current time and the sunrise time. It calculates the expected opening time and sends out a notification if the door has not been opened after this time.
 
-The directory structure of this template repository is as follows:
+## Notifications
 
-```
-│
-├───lib
-│       README
-│
-├───src
-│   │   configurations.h
-│   │   hardware.cpp
-│   │   hardware.h
-│   │   main.cpp
-│   │   state.cpp
-│   │   state.h
-│   │
-│   └───Flash
-│           Flash.cpp
-│           Flash.h
-│           FlashStructure.h
-│
-└───utils
-    ├───Arduino
-    ├───Buzzer
-    ├───EdgeDetection
-    ├───ESPWifi
-    ├───FlashStorage
-    ├───LED
-    ├───Logging
-    ├───MathUtils
-    ├───Potentiometer
-    ├───Security
-    └───Timer
-
-```
-
-- **`src/`**: This directory contains the main firmware code. You can create additional source files as needed, such as configuration files (`configurations.h`) or modules (`hardware.cpp`, `hardware.h`, etc.).
-- **`utils/`**: contains useful libraries
-- **`README.md`**: This file provides an overview and instructions for the template repository.
-
-## Removing Example Code
-
-If you prefer to start with a clean slate and remove the example code provided in this template, you can use the "remove-template" branch. This branch has already removed the example code and is ready for you to begin your project without any pre-existing code.
-
-### Instructions:
-
-1. Switch to the "remove-template" branch using the following command:
-
-   ```
-   git checkout example-remove
-   ```
-2. Merge the "remove-template" branch into the "main" branch:
-
-   ```
-   git merge example-remove
-   ```
-
-   **Note:** Before merging, make sure you have committed or stashed any changes you made to the "main" branch to avoid conflicts.
-3. Once the merge is complete, the "main" branch will now contain only the directory structure and the README.md file.
-4. You can now start building your firmware project from this clean template.
-
-### Additional Information:
-
-The "remove-template" branch was created to provide users with a minimalist starting point, eliminating any example code that might not be relevant to your specific project requirements.
+Notifications are sent out using IFTTT webhooks. You'll need to set up an IFTTT account and configure a webhook to receive these notifications.
 
 ## Contributing
 
-Contributions to improve this template repository are always welcome. If you find any issues or have suggestions for enhancements, please open an issue or submit a pull request.
+Contributions to improve this repository are always welcome. If you find any issues or have suggestions for enhancements, please open an issue or submit a pull request.
 
 ## License
 
-This template repository is licensed under the [MIT License](LICENSE). Feel free to use it as a starting point for your own firmware projects.
-
-## Resources
-
-- [Arduino Reference](https://www.arduino.cc/reference/en/)
-- [PlatformIO Documentation](https://docs.platformio.org/)
-- [Arduino Forum](https://forum.arduino.cc/)
-- [PlatformIO Community](https://community.platformio.org/)
+This repository is licensed under the [MIT License](LICENSE). Feel free to use it as a starting point for your own firmware projects.
