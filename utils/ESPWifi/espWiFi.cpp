@@ -1,5 +1,5 @@
 // =============================================================================
-// Template-Project | Main
+// Chickenshed-Door-Watcher | Main
 // =============================================================================
 
 #ifdef ESP8266
@@ -15,7 +15,7 @@ namespace
 
 void Wifi::establish()
 {
-    WiFi.hostname("NodeMCU | Template-Project");
+    WiFi.hostname("NodeMCU | Chickenshed-Door-Watcher");
     WiFi.begin(ssid, password);
 
     while (WiFi.status() != WL_CONNECTED)

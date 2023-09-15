@@ -1,9 +1,9 @@
 // =============================================================================
-// Template-Project | State
+// Chickenshed-Door-Watcher | State
 // =============================================================================
 
-#ifndef _TEMPLATE_PROJECT_STATE_
-#define _TEMPLATE_PROJECT_STATE_
+#ifndef _CHICKENSHED_DOOR_WATCHER_STATE_
+#define _CHICKENSHED_DOOR_WATCHER_STATE_
 
 #include "hardware.h"
 
@@ -25,4 +25,4 @@ namespace State
     void stateError();
 } // namespace State
 
-#endif // _TEMPLATE_PROJECT_STATE_
+#endif // _CHICKENSHED_DOOR_WATCHER_STATE_

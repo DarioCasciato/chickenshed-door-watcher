@@ -1,9 +1,9 @@
 // =============================================================================
-// Template-Project | Configurations
+// Chickenshed-Door-Watcher | Configurations
 // =============================================================================
 
-#ifndef _TEMPLATE_PROJECT_CONFIGURATIONS_
-#define _TEMPLATE_PROJECT_CONFIGURATIONS_
+#ifndef _CHICKENSHED_DOOR_WATCHER_CONFIGURATIONS_
+#define _CHICKENSHED_DOOR_WATCHER_CONFIGURATIONS_
 
 
 
@@ -15,4 +15,4 @@ inline const char* api_key = "OPENWEATHERMAP_API_KEY";
 
 // -----------------------------------------------------------------------------
 
-#endif // _TEMPLATE_PROJECT_CONFIGURATIONS_
+#endif // _CHICKENSHED_DOOR_WATCHER_CONFIGURATIONS_
