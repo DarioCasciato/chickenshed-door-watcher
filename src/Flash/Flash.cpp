@@ -5,7 +5,7 @@
 #include "Flash.h"
 #include "Logging.h"
 
-#define MAGIC_NUMBER 0x1234
+#define MAGIC_NUMBER 0x3661
 
 namespace Flash
 {
