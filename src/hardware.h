@@ -7,6 +7,7 @@
 
 #include "configurations.h"
 #include "gpio.h"
+#include "EdgeDetection.h"
 
 
 namespace Hardware
@@ -14,8 +15,15 @@ namespace Hardware
     // Port definitions
     enum class Port : uint8_t
     {
-
+        reedDoor = (uint8_t) GPIO::Port::D6
     };
+
+
+    // extern variable for reedDoor state
+    extern bool reedDoorState;
+
+    //extern EdgeDetection for reedDoor
+    extern EdgeDetection reedDoor;
 
 
     /// @brief Initializes hardware

@@ -16,6 +16,14 @@ EdgeDetection::EdgeDetection(uint8_t *edgeValue)
     edgeCount++;
 }
 
+EdgeDetection::EdgeDetection(bool *edgeValue)
+{
+    _edgeValue = (uint8_t *)edgeValue;
+
+    edgeList[edgeCount] = this;
+    edgeCount++;
+}
+
 void EdgeDetection::updateEdge()
 {
     Edge.old = Edge.act;

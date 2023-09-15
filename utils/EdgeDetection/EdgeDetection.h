@@ -28,6 +28,7 @@ public:
     ///
     /// @param edgeValue Pointer to the variable representing the edge value
     EdgeDetection(uint8_t *edgeValue);
+    EdgeDetection(bool *edgeValue);
 
     /// @brief Update the edge detection for a specific instance
     void updateEdge();

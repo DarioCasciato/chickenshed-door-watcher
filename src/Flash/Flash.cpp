@@ -5,24 +5,27 @@
 #include "Flash.h"
 #include "Logging.h"
 
-#define MAGIC_NUMBER 0x1234
+#define MAGIC_NUMBER 0x3661
 
 namespace Flash
 {
     // add flash memory definition here
     // example: FlashStorage testMemory(sizeof(Flash::Structure::memory1), sizeof(DataType), MAGICNUMBER);
-    FlashStorage storage(sizeof(Flash::Structure::memory1), sizeof(DataType), MAGIC_NUMBER);
+    FlashStorage failedOpen(sizeof(Flash::Structure::failedOpen), sizeof(failEntry), MAGIC_NUMBER);
+    FlashStorage failedClose(sizeof(Flash::Structure::failedClose), sizeof(failEntry), MAGIC_NUMBER);
 
 
     // Add initializers here
     void initStorage()
     {
-        storage.init();
+        failedOpen.init();
+        failedClose.init();
     }
 
     void clear()
     {
-        storage.clear();
+        failedOpen.clear();
+        failedClose.clear();
     }
 
     void init()
