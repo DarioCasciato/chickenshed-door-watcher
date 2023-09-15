@@ -5,7 +5,13 @@
 #ifndef _TEMPLATE_PROJECT_CONFIGURATIONS_
 #define _TEMPLATE_PROJECT_CONFIGURATIONS_
 
+#include <stdint.h>
 
+const uint32_t fetchInterval = 300000;  // 5 minutes
+
+// values get defined from analytical data from analyzer
+const uint32_t meanDeviation = 0; // TODO tbd
+const uint16_t timeTolerance = 0; // TODO tbd
 
 // -----------------------------------------------------------------------------
 
