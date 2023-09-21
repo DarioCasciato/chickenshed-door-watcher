@@ -1,9 +1,9 @@
 // =============================================================================
-// Template-Project | Hardware
+// Chickenshed-Door-Watcher | Hardware
 // =============================================================================
 
-#ifndef _TEMPLATE_PROJECT_HARDWARE_
-#define _TEMPLATE_PROJECT_HARDWARE_
+#ifndef _CHICKENSHED_DOOR_WATCHER_HARDWARE_
+#define _CHICKENSHED_DOOR_WATCHER_HARDWARE_
 
 #include "configurations.h"
 #include "gpio.h"
@@ -34,4 +34,4 @@ namespace Hardware
 } // namespace Hardware
 
 
-#endif // _TEMPLATE_PROJECT_HARDWARE_
+#endif // _CHICKENSHED_DOOR_WATCHER_HARDWARE_
